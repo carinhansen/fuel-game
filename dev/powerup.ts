@@ -14,7 +14,7 @@ class Powerup {
         let foreground = document.getElementsByTagName("foreground")[0];
         foreground.appendChild(this._element);
 
-        this.posx = 100;
+        this.posx = window.innerWidth - 150;
         this.posy = window.innerHeight;
 
         this._element.style.transform = `translate(${this.posx}px, ${this.posy}px)`;

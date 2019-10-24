@@ -275,7 +275,7 @@ var Powerup = (function () {
         this._element = document.createElement("powerup");
         var foreground = document.getElementsByTagName("foreground")[0];
         foreground.appendChild(this._element);
-        this.posx = 100;
+        this.posx = window.innerWidth - 150;
         this.posy = window.innerHeight;
         this._element.style.transform = "translate(" + this.posx + "px, " + this.posy + "px)";
     }
@@ -352,9 +352,13 @@ var Start = (function () {
         this.container = document.createElement('div');
         this.container.classList.add('intro-container');
         this.start.appendChild(this.container);
+        this.headerIntro = document.createElement('h1');
+        this.headerIntro.classList.add('header-intro');
+        this.headerIntro.innerText = "KMar Brandstof game";
+        this.container.appendChild(this.headerIntro);
         this.introText = document.createElement('span');
         this.introText.classList.add('intro-text');
-        this.introText.innerText = "In deze game ga je proberen zoveel mogelijk benzine te vangen. Die dit door de pijltoetsen te gebruiken. Kijk uit dat het aanbeeld niet op je hoofd valt, dan verlies je namelijk de helft van je verzamelde benzine.";
+        this.introText.innerText = "In deze game ga je proberen zoveel mogelijk benzine te vangen. Doe dit door de pijltoetsen te gebruiken. Kijk uit dat het aanbeeld niet op je hoofd valt, dan verlies je namelijk de helft van je verzamelde benzine.";
         this.container.appendChild(this.introText);
         this.button = document.createElement('button');
         this.button.classList.add('button');

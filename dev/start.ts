@@ -4,6 +4,7 @@ class Start {
     private start:HTMLElement
     private container:HTMLElement
     private button:HTMLElement
+    private headerIntro:HTMLElement
     private introText:HTMLElement
 
     private constructor() {}
@@ -24,9 +25,14 @@ class Start {
         this.container.classList.add('intro-container')
         this.start.appendChild(this.container)
 
+        this.headerIntro = document.createElement('h1')
+        this.headerIntro.classList.add('header-intro')
+        this.headerIntro.innerText = "KMar Brandstof game"
+        this.container.appendChild(this.headerIntro)
+
         this.introText = document.createElement('span')
         this.introText.classList.add('intro-text')
-        this.introText.innerText = "In deze game ga je proberen zoveel mogelijk benzine te vangen. Die dit door de pijltoetsen te gebruiken. Kijk uit dat het aanbeeld niet op je hoofd valt, dan verlies je namelijk de helft van je verzamelde benzine."
+        this.introText.innerText = "In deze game ga je proberen zoveel mogelijk benzine te vangen. Doe dit door de pijltoetsen te gebruiken. Kijk uit dat het aanbeeld niet op je hoofd valt, dan verlies je namelijk de helft van je verzamelde benzine."
         this.container.appendChild(this.introText)
 
         this.button = document.createElement('button')
