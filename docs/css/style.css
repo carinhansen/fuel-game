@@ -57,7 +57,7 @@ foreground {
     font-size: 24px;
     position: absolute;
     margin: 20px;
-    background-color: #000f79ba;
+    background-color: rgba(0, 0, 0, 0.7294117647058823);
     padding: 20px;
     color: #fff;
 }
