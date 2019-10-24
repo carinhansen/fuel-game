@@ -33,14 +33,14 @@ class Game {
         if (amount === 0) {
             this.score = Math.round(this.score / 2);
             this.scoreElement.classList.remove("fullScore");
-        } else {
-            if(this.score >= 150){
+        } else if(this.score >= 150) {
                 this.score = 150;
                 this.scoreElement.classList.add("fullScore");
-            } else {
-                this.scoreElement.classList.remove("fullScore");
-                Math.round(this.score += amount);
-            }
+                alert("Je hebt genoeg benzine verzameld");
+                window.location.reload();
+        } else {
+            this.scoreElement.classList.remove("fullScore");
+            Math.round(this.score += amount);
         }
     }
 
@@ -62,6 +62,7 @@ class Game {
                 this.food.push(food)
             }
         }
+
         requestAnimationFrame(() => this.gameLoop())
     }
 

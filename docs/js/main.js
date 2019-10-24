@@ -75,7 +75,7 @@ var Brain = (function (_super) {
         return _this;
     }
     Brain.prototype.action = function () {
-        this.game.addScore(50);
+        this.game.addScore(25);
     };
     return Brain;
 }(Food));
@@ -215,15 +215,15 @@ var Game = (function () {
             this.score = Math.round(this.score / 2);
             this.scoreElement.classList.remove("fullScore");
         }
+        else if (this.score >= 150) {
+            this.score = 150;
+            this.scoreElement.classList.add("fullScore");
+            alert("Je hebt genoeg benzine verzameld");
+            window.location.reload();
+        }
         else {
-            if (this.score >= 150) {
-                this.score = 150;
-                this.scoreElement.classList.add("fullScore");
-            }
-            else {
-                this.scoreElement.classList.remove("fullScore");
-                Math.round(this.score += amount);
-            }
+            this.scoreElement.classList.remove("fullScore");
+            Math.round(this.score += amount);
         }
     };
     Game.prototype.showScore = function () {

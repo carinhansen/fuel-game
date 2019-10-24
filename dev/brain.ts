@@ -9,6 +9,6 @@ class Brain extends Food {
     }
 
     public action(){
-        this.game.addScore(50);
+        this.game.addScore(25);
     }
 }
